@@ -50,24 +50,7 @@ server-guardian/
 ```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install git python3 python3-pip -y
-```
-
----
-
-## Python Environment Setup
-
-```bash
 sudo apt install python3.12-venv -y
-
-python3 -m venv venv
-source venv/bin/activate
-```
-
----
-
-## Install Dependencies
-
-```bash
 pip install flask
 ```
 
