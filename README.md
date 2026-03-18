@@ -45,100 +45,11 @@ server-guardian/
 
 ---
 
-## Local Setup (Development)
-
-### Create project
-
-```bash
-cd ~/repos/git
-mkdir server-guardian
-cd server-guardian
-git init
-git branch -m main
-```
-
-### Connect to GitHub
-
-```bash
-git remote add origin https://github.com/g-mancini/server-guardian.git
-git remote set-url origin git@github.com:g-mancini/server-guardian.git
-git remote -v
-```
-
-### Initial commit
-
-```bash
-touch README.md
-git add README.md
-git commit -m "Initial commit: project setup"
-git push -u origin main
-```
-
----
-
-## Project Structure Setup
-
-```bash
-mkdir scripts backend config logs
-
-touch scripts/guardian.sh
-touch backend/app.py
-touch config/config.conf
-touch requirements.txt
-```
-
-### Commit structure
-
-```bash
-git add .
-git commit -m "Add core structure: bash monitoring script + flask dashboard"
-git push
-```
-
----
-
-## EC2 Setup
-
-### Connect to instance
-
-```bash
-ssh -i your-key.pem ubuntu@YOUR-EC2-IP
-```
-
 ### Install dependencies
 
 ```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install git python3 python3-pip -y
-```
-
----
-
-## Configure SSH for GitHub (EC2)
-
-```bash
-ssh-keygen -t ed25519 -C "ec2-server"
-cat ~/.ssh/id_ed25519.pub
-```
-
-Add the key to GitHub:
-https://github.com/settings/keys
-
-Test:
-
-```bash
-ssh -T git@github.com
-```
-
----
-
-## Clone Repository on EC2
-
-```bash
-git clone git@github.com:g-mancini/server-guardian.git
-cd server-guardian
-ls
-```
 
 ---
 
@@ -157,43 +68,6 @@ source venv/bin/activate
 
 ```bash
 pip install flask
-```
-
-Verify:
-
-```bash
-python -c "import flask; print(flask.__version__)"
-```
-
----
-
-## Run Dashboard
-
-```bash
-python backend/app.py
-```
-
-Access from browser:
-
-```
-http://YOUR-EC2-IP:5000
-```
-
-Make sure port 5000 is open in EC2 Security Groups.
-
----
-
-## Bash Script Execution
-
-```bash
-chmod +x scripts/guardian.sh
-sudo ./scripts/guardian.sh
-```
-
-Check output:
-
-```bash
-cat /var/log/guardian_metrics.json
 ```
 
 ---
@@ -253,13 +127,13 @@ sudo systemctl status server-guardian
 
 ---
 
-## Debug Commands
+## Access from browser:
 
-```bash
-ss -tulnp | grep 5000
-curl http://localhost:5000
-cat /var/log/server_guardian.log
 ```
+http://YOURIP:5000
+```
+
+Make sure port 5000 is open.
 
 ---
 
