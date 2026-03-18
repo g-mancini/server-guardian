@@ -45,15 +45,24 @@ server-guardian/
 
 ---
 
-### Install dependencies
+## Install dependencies
 
 ```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install git python3 python3-pip -y
 sudo apt install python3.12-venv -y
+python3 -m venv venv
+source venv/bin/activate
 pip install flask
 ```
+---
 
+## Generate initial metrics
+
+```bash
+chmod +x scripts/guardian.sh
+sudo ./scripts/guardian.sh
+```
 ---
 
 ## Automation with Cron
@@ -111,7 +120,7 @@ sudo systemctl status server-guardian
 
 ---
 
-## Access from browser:
+## Access from browser
 
 ```
 http://YOURIP:5000
