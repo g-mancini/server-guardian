@@ -49,16 +49,16 @@ This project combines:
 
 ## Project Structure
 
-server-guardian/
-├── backend/
-│   └── app.py
-├── scripts/
-│   └── guardian.sh
-├── config/
-│   └── config.conf
-├── logs/
-├── requirements.txt
-└── README.md
+    server-guardian/
+    ├── backend/
+    │   └── app.py
+    ├── scripts/
+    │   └── guardian.sh
+    ├── config/
+    │   └── config.conf
+    ├── logs/
+    ├── requirements.txt
+    └── README.md
 
 ---
 
