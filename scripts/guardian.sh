@@ -1,7 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 # ==============================
-# Server Guardian Script
+# Server Guardian - guardian.sh
+# Author: g-mancini
+# Version: 1.0.0
+# Description: Collects system metrics (CPU, RAM, Disk)
+#              and exports them as JSON for the dashboard.
 # ==============================
 
 # Carica configurazione
