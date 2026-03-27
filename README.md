@@ -46,14 +46,13 @@ server-guardian/
 ---
 
 ## Install dependencies
-
 ```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install git python3 python3-pip -y
 sudo apt install python3.12-venv -y
 python3 -m venv venv
 source venv/bin/activate
-pip install flask
+pip install -r requirements.txt
 ```
 ---
 
@@ -145,6 +144,19 @@ Make sure port 5000 is open.
 * The Flask server runs in development mode
 * Root privileges are required for system-level logging
 * Designed for Debian/Ubuntu environments (e.g. AWS EC2)
+
+---
+
+## Development setup
+
+This project uses a Python virtual environment. After cloning:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+A `.gitignore` is included to exclude `venv/`, logs, `.env` files and editor configs.
 
 ---
 
