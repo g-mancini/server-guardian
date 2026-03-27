@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -euo pipefail
 # ==============================
 # Server Guardian Script
 # ==============================
